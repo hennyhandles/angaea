@@ -6,11 +6,12 @@
   <% @users.each do |user| %>
     <div class="users-card-container">
       <div class="user-picture">
-        <%= gravatar_for user, size: 50 %>
+        <%= gravatar_for user, size: 300 %>
       </div>
-      <div class="user-link">
+      <div class="user-info">
         <%= link_to user.
         name, user %>
+        <div class="user-contact"><%= user.email%></div>
       </div>
     </div>
   <% end %>

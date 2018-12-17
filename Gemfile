@@ -21,6 +21,8 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -68,3 +70,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+
+group :production do
+  gem 'pg',  '0.20.0'
+  gem 'fog', '1.42'
+end

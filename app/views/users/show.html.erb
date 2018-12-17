@@ -11,7 +11,11 @@
   </div>
   <div class="toggle-bar">
     <div class="left-toggle">Activities</div>
+    <div class="middle-toggle">Rentals</div>
     <div class="right-toggle">Ratings</div>
+    <%if current_user == @user%>
+      <div class="create-activity-toggle">Create Activity</div>
+    <%end%>
   </div>
   <div class="users-activities-container">
     <%@activities.each do |activity|%>
@@ -26,3 +30,4 @@
     <%end%>
   </div>
 </div>
+<!--  make rentals next to rating. Make create button to create an activity below about me-->

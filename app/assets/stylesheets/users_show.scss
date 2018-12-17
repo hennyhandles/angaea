@@ -37,7 +37,25 @@
 }
 
 .left-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.5s;
+}
+
+.middle-toggle {
   border-right: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.5s;
+}
+
+.create-activity-toggle {
+  border-left: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +69,16 @@
 }
 
 .right-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.middle-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.create-activity-toggle:hover {
   cursor: pointer;
   background: #A6CDDE;
 }

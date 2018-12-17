@@ -4,14 +4,4 @@ module StaticPagesHelper
  #end
  #
  #later
-
- def help
- end
-
- def about
- end
-
- def contact
- end
-end
 end

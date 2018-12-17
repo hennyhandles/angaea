@@ -1,0 +1,26 @@
+.users-outer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.users-card-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.user-picture {
+  height: 150px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.user-link {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

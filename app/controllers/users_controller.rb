@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @activities = @user.activities.paginate(page: params[:page])
+    @activities = @user.activities.paginate(page: params[:page]) #need on bottom of page
   end
 
   def new

@@ -5,7 +5,7 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.string :additional_info
       t.references :user, foreign_key: true
       t.float :cost
-      t.string :type
+      t.string :type #dance music or art
       t.string :addressLN1
       t.string :addressLN2
       t.string :city
@@ -15,6 +15,6 @@ class CreateActivities < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :microposts, [:user_id, :created_at]
+    add_index :activities, [:user_id, :created_at]
   end
 end

@@ -9,3 +9,13 @@
     </section>
   </aside>
 </div>
+<div class="col-md-8">
+   <% if @user.activities.any? %>
+     <h3>Activities (<%= @user.acitivities.count %>)</h3>
+     <ol class="activities">
+       <%= render @activities %>
+     </ol>
+     <%= will_paginate @activities %>
+   <% end %>
+ </div>
+</div>

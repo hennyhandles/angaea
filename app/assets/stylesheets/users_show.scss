@@ -42,6 +42,17 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  transition: 0.5s;
+}
+
+.left-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.right-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
 }
 
 .right-toggle {
@@ -49,6 +60,7 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  transition: 1s;
 }
 
 .users-activities-container {
@@ -81,11 +93,23 @@
   object-fit: cover;
 }
 
+.top-activity-card:hover {
+  cursor: pointer;
+}
+
 .bottom-activity-card {
   height: 20%;
-  width: 100%; 
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.activity-card-user:hover {
+  cursor: pointer;
+}
+
+.activity-card-name {
+  cursor: pointer;
 }

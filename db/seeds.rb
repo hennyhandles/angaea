@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.order(:created_at).take(6)
+user1 = User.create(name: "Bill", email: "Bill@mail.com", password: "password")
+user2 = User.create(name: "Jill", email: "Jill@mail.com", password: "password")
+user3 = User.create(name: "Joe", email: "Joe@mail.com", password: "password")
+user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password")
+
 50.times do
   content = Faker::Lorem.sentence(5)
-  users.each { |user| user.activities.create!(content: content) }
+  User.all.each { |user| user.activities.create!(content: content) }
 end

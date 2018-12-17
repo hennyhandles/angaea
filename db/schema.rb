@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_103406) do
+ActiveRecord::Schema.define(version: 2018_12_17_063504) do
+
+  create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.string "additional_info"
+    t.bigint "user_id"
+    t.float "cost"
+    t.string "type"
+    t.string "addressLN1"
+    t.string "addressLN2"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "dayandtime"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -23,4 +40,5 @@ ActiveRecord::Schema.define(version: 2018_12_11_103406) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "activities", "users"
 end

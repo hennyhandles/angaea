@@ -1,21 +1,28 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-<div class="col-md-8">
-   <% if @user.activities.any? %>
-     <h3>Activities (<%= @user.acitivities.count %>)</h3>
-     <ol class="activities">
-       <%= render @activities %>
-     </ol>
-     <%= will_paginate @activities %>
-   <% end %>
- </div>
+<div class="users-show-container">
+  <div class="users-show-title">Portfolio</div>
+  <div class="portfolio-container">
+    <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+    <div class="users-show-info-container">
+      <div class="users-show-name"><%=@user.name%></div>
+      <div>about me</div>
+      <div>profession</div>
+      <div>skills</div>
+    </div>
+  </div>
+  <div class="toggle-bar">
+    <div class="left-toggle">Activities</div>
+    <div class="right-toggle">Ratings</div>
+  </div>
+  <div class="users-activities-container">
+    <%@activities.each do |activity|%>
+      <div class="activities-cart-container">
+        <img class="top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+        <div class="bottom-activity-card">
+          <div class="activity-card-name"><%=activity.activity_name%></div>
+          <div class="activity-card-user"><<%=activity.user%>/div>
+          <div class="activity-card-price">$<%=activity.price%></div>
+        </div>
+      </div>
+    <%end%>
+  </div>
 </div>

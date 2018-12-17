@@ -14,3 +14,9 @@ user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password"
   content = Faker::Lorem.sentence(5)
   User.all.each { |user| user.activities.create!(content: content) }
 end
+
+User.all.each do |user|
+  user.activities.each do |activity|
+    Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: "Great activity")
+  end
+end

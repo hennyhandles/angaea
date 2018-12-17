@@ -3,8 +3,8 @@ class ActivitiesController < ApplicationController
 #
   def create
     @activity = current_user.acitivities.build(acitivities_params)
-    flash[:success] = "Micropost created!"
-    redirect_to portfolio_url
+    flash[:success] = "Activity created!"
+    redirect_to portfolio_url #need
   else
     render 'static_pages/home'
   end

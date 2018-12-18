@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+$(document).on('turbolinks:load', () => {
   showRatings()
   showActivities()
 })

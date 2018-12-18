@@ -7,7 +7,6 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.string :additional_info
       t.references :user, foreign_key: true
       t.float :cost
-      t.string :category #dance music or art
       t.string :addressLN1
       t.string :addressLN2
       t.string :city

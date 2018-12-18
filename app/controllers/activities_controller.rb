@@ -1,11 +1,10 @@
-Activity controller
 class ActivitiesController < ApplicationController
 
   def create
     @activity = current_user.acitivities.build(acitivities_params)
 
     flash[:success] = "Activity created!"
-    redirect_to portfolio_url #need
+    redirect_to portfolio_url
 
   else
     render 'static_pages/home'
@@ -13,7 +12,6 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-
     render "users/show"
   end
 
@@ -23,10 +21,7 @@ class ActivitiesController < ApplicationController
     redirect_to_request.referrer || root_url
   end
 
-  def danceFEED
-    Activity.where("activity_type =?" , Dance)
-  end
-  #indexs
+
   def danceFEED
       @activities = Activities.where(category: 'Dance')
   end
@@ -37,4 +32,13 @@ class ActivitiesController < ApplicationController
 
   def muscFEED
       @activities = Activities.where(category: 'MUSIC')
+  end
+
+
+  private:
+
+  def activities_params
+    params.require(:activity).permit(:content, :aditional_info, :user, :cost, :type, :picture,
+                                                :addressLN1, :addressLN2, :city, :state, :zip)
+    end
   end

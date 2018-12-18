@@ -1,0 +1,7 @@
+<% provide(:title, 'Dance Activities') %>
+<h1>Dance Activities</h1>
+<div class="users-sctivities-container">
+  <% @activities.each do |activity| %>
+  <%= render 'activities/dance_index' %>
+  <% end %>
+</div>

@@ -29,5 +29,20 @@
       </div>
     <%end%>
   </div>
+  <div class="users-ratings-container">
+    <%@activities.each do |activity|%>
+      <div class="ratings-card-container">
+        <img class="ratings-card-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+        <div class="ratings-card-right">
+          <div class="stars-container">
+            <%activity.get_average_rating.times do |num|%>
+              <div class="star"><img width="25px" height="25px" src="../../assets/images/star.png" alt="star image"/></div>
+            <%end%>
+          </div>
+          <div class="ratings-comment">Really really great show</div>
+        </div>
+      </div>
+    <%end%>
+  </div>
 </div>
 <!--  make rentals next to rating. Make create button to create an activity below about me-->

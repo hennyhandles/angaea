@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+<<<<<<< HEAD
     @activities = @user.activities 
+=======
+    @activity = Activity.new
+    @activities = @user.activities #need on bottom of page
+>>>>>>> 99f2aabcb4debec9074c5853db53549d4e41d68b
   end
 
   def new

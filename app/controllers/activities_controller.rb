@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    render "users/show"
+
   end
 
   def destroy

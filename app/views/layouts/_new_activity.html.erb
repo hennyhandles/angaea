@@ -1,14 +1,15 @@
-<% provide(:title, 'New Activity') %>
-<h1>Sign up</h1>
+<div class="create-activity-form">
+  <% provide(:title, 'New Activity') %>
+  <h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@activity) do |f| %>
-      <%= f.label :activty , "name" %>
-      <%= f.text_field :name, class: 'form-control' %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@activity) do |f| %>
+      <%= f.label :activty, "name" %>
+      <%= f.text_field :activity_name, class: 'form-control' %>
 
       <%= f.label :City, "Catagory" %>
-      <%= f.text_field :content , catagory: 'form-control' %>
+      <%= f.text_field :content, catagory: 'form-control' %>
 
       <%= f.label :Description ,  "Description" %>
       <%= f.text_field :content, description: 'form-control' %>
@@ -37,6 +38,7 @@
 
 
       <%= f.submit "Post Activity", class: "btn btn-primary" %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

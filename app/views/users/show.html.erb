@@ -1,25 +1,27 @@
 <div class="users-show-container">
   <div class="users-show-title">Portfolio</div>
   <div class="portfolio-container">
-    <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+    <div class="users-show-image-container">
+      <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+    </div>
     <div class="users-show-info-container">
       <div class="users-show-name"><%=@user.name%></div>
-      <div>about me</div>
-      <div>profession</div>
-      <div>skills</div>
+      <div><%=@user.about_me%></div>
+      <div><%=@user.profession%></div>
+      <div><%=@user.skills%></div>
     </div>
   </div>
   <div class="toggle-bar">
-    <div class="left-toggle">Activities</div>
-    <div class="middle-toggle">Rentals</div>
+    <div class="left-toggle">Activities & Rentals</div>
     <div class="right-toggle">Ratings</div>
     <%if current_user == @user%>
       <div class="create-activity-toggle">Create Activity</div>
     <%end%>
   </div>
+  <!-- Activities card -->
   <div class="users-activities-container">
     <%@activities.each do |activity|%>
-      <div class="activities-cart-container">
+      <div class="activities-card-container">
         <img class="top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
         <div class="bottom-activity-card">
           <div class="activity-card-name"><%=activity.activity_name%></div>
@@ -29,5 +31,20 @@
       </div>
     <%end%>
   </div>
+  <!-- Ratings card -->
+  <div class="users-ratings-container">
+    <%@activities.each do |activity|%>
+      <div class="ratings-card-container">
+        <img class="ratings-card-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+        <div class="ratings-card-right">
+          <div class="stars-container">
+            <%activity.get_average_rating.times do |num|%>
+              <div class="star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
+            <%end%>
+          </div>
+          <div class="ratings-comment">"<%=activity.get_comment%>"</div>
+        </div>
+      </div>
+    <%end%>
+  </div>
 </div>
-<!--  make rentals next to rating. Make create button to create an activity below about me-->

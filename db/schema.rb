@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_224003) do
     t.string "additional_info"
     t.bigint "user_id"
     t.float "cost"
-    t.string "type"
+    t.string "category"
     t.string "addressLN1"
     t.string "addressLN2"
     t.string "city"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2018_12_17_224003) do
     t.string "name"
     t.string "email"
     t.string "password"
+    t.string "profession"
+    t.text "skills"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

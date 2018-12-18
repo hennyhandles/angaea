@@ -132,7 +132,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid lightgray; 
+  border: 1px solid lightgray;
 }
 
 .activity-card-user:hover {
@@ -190,4 +190,8 @@
 
 .star {
   margin-left: 5px;
+}
+
+.ratings-comment {
+  margin-left: 5px; 
 }

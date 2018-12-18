@@ -19,7 +19,7 @@
   </div>
   <div class="users-activities-container">
     <%@activities.each do |activity|%>
-      <div class="activities-cart-container">
+      <div class="activities-card-container">
         <img class="top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
         <div class="bottom-activity-card">
           <div class="activity-card-name"><%=activity.activity_name%></div>
@@ -36,10 +36,10 @@
         <div class="ratings-card-right">
           <div class="stars-container">
             <%activity.get_average_rating.times do |num|%>
-              <div class="star"><img width="25px" height="25px" src="../../assets/images/star.png" alt="star image"/></div>
+              <div class="star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
             <%end%>
           </div>
-          <div class="ratings-comment">Really really great show</div>
+          <div class="ratings-comment">"<%=activity.get_comment%>"</div>
         </div>
       </div>
     <%end%>

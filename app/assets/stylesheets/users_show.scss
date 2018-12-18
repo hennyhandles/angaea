@@ -99,7 +99,7 @@
   margin-top: 25px;
 }
 
-.activities-cart-container {
+.activities-card-container {
   margin-top: 25px;
   width: 300px;
   height: 500px;
@@ -132,6 +132,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid lightgray; 
 }
 
 .activity-card-user:hover {
@@ -165,17 +166,21 @@
   }
 }
 
-.rating-card-picture {
+.ratings-card-picture {
   display: flex;
-  flex: 2;
+  width: 200px;
+  object-fit:  cover;
+  height: 100%;
 }
 
 .ratings-card-right {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-left: 5px;
-  flex: 1;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  border: 1px solid lightgray;
 }
 
 .stars-container {

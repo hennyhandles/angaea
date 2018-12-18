@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   # resources :activities
-  root 'static_pages#activities'  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # root 'static_pages#activities'  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/activities', to: 'static_pages#activities'
+  root 'static_pages#home'
   get '/rentals' , to: 'static_pages#rentals'
   get '/bookings' , to: 'static_pages#bookings'
   get '/dashboard' , to: 'static_pages#dashboard'

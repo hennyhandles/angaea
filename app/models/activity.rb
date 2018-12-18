@@ -54,4 +54,16 @@ class Activity < ApplicationRecord
     end
     return comment
   end
+
+  def self.categorize_activities
+    categories_hash = {
+      "dance" => [],
+      "music" => [],
+      "art" => []
+    }
+    self.all.each do |activity|
+      categories_hash[activity.category].push(activity)
+    end
+    return categories_hash
+  end
 end

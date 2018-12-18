@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = current_user.acitivities.build(acitivities_params)
-
+    
     flash[:success] = "Activity created!"
     redirect_to portfolio_url
 
@@ -35,10 +35,9 @@ class ActivitiesController < ApplicationController
   end
 
 
-  private:
-
+  private
   def activities_params
-    params.require(:activity).permit(:content, :aditional_info, :user, :cost, :type, :picture,
+    params.require(:activity).permit(:content, :aditional_info, :user, :cost, :category, :picture,
                                                 :addressLN1, :addressLN2, :city, :state, :zip)
     end
   end

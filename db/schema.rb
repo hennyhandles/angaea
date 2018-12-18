@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_224003) do
+ActiveRecord::Schema.define(version: 2018_12_18_195247) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
@@ -41,6 +41,25 @@ ActiveRecord::Schema.define(version: 2018_12_17_224003) do
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_ratings_on_activity_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "rentals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "cost", null: false
+    t.string "rental_name", null: false
+    t.text "description", null: false
+    t.string "category"
+    t.text "additional_info"
+    t.string "addressLN1", null: false
+    t.string "addressLN2"
+    t.string "state", null: false
+    t.string "city", null: false
+    t.string "zipcode", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

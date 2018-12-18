@@ -9,6 +9,9 @@ user1 = User.create(name: "Bill", email: "Bill@mail.com", password: "password")
 user2 = User.create(name: "Jill", email: "Jill@mail.com", password: "password")
 user3 = User.create(name: "Joe", email: "Joe@mail.com", password: "password")
 user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password")
+
+Rental.create(cost: 55, rental_name: "Truck", city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user1.id, description: "Really cool truck")
+
 50.times do |counter|
   name = Faker::HarryPotter.character
   User.create!(name: name, skills: Faker::ChuckNorris.fact, profession: Faker::Job.title, email: (name.split(" ")[0]+counter.to_s+"@mail.com"), about_me: Faker::GameOfThrones.quote, password: "password")

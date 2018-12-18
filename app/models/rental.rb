@@ -1,4 +1,5 @@
 class Rental < ApplicationRecord
+  belongs_to :user
 
-  belongs_to User 
+  validates :cost, :rental_name, :description, :category, :addressLN1, :state, :city, :zipcode, presence: true
 end

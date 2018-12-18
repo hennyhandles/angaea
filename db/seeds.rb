@@ -17,7 +17,7 @@ end
 types = ["dance", "music", "art"]
 50.times do
   content = Faker::Lorem.sentence(5)
-  User.all.each { |user| user.activities.create!(content: content, category: types[rand(2)], cost: rand(500), city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip) }
+  User.all.each { |user| user.activities.create!(picture: Faker::LoremPixel.image("50x60"), activity_name: Faker::GameOfThrones.quote, content: content, category: types[rand(2)], cost: rand(500), city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip) }
 end
 
 User.all.each do |user|

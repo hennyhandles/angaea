@@ -12,13 +12,13 @@
     </div>
   </div>
   <div class="toggle-bar">
-    <div class="left-toggle">Activities</div>
-    <div class="middle-toggle">Rentals</div>
+    <div class="left-toggle">Activities & Rentals</div>
     <div class="right-toggle">Ratings</div>
     <%if current_user == @user%>
       <div class="create-activity-toggle">Create Activity</div>
     <%end%>
   </div>
+  <!-- Activities card -->
   <div class="users-activities-container">
     <%@activities.each do |activity|%>
       <div class="activities-card-container">
@@ -31,6 +31,7 @@
       </div>
     <%end%>
   </div>
+  <!-- Ratings card -->
   <div class="users-ratings-container">
     <%@activities.each do |activity|%>
       <div class="ratings-card-container">

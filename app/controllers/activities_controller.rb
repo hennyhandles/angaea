@@ -3,12 +3,18 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = current_user.acitivities.build(acitivities_params)
-    
+
     flash[:success] = "Activity created!"
     redirect_to portfolio_url #need
 
   else
     render 'static_pages/home'
+  end
+
+  def new
+    @activity = Activity.new
+
+    render "users/show"
   end
 
   def destroy
@@ -22,13 +28,13 @@ class ActivitiesController < ApplicationController
   end
   #indexs
   def danceFEED
-      @activities = Activities.where(type: 'Dance')
+      @activities = Activities.where(category: 'Dance')
   end
 
   def artFEED
-      @activities = Activities.where(type: 'ART')
+      @activities = Activities.where(category: 'ART')
   end
 
   def muscFEED
-      @activities = Activities.where(type: 'MUSIC')
+      @activities = Activities.where(category: 'MUSIC')
   end

@@ -148,6 +148,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  display: none;
 }
 
 .ratings-card-container {
@@ -194,4 +195,8 @@
 
 .ratings-comment {
   margin-left: 5px;
+}
+
+.create-activity-form {
+  display: none; 
 }

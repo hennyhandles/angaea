@@ -1,12 +1,14 @@
 <div class="users-show-container">
   <div class="users-show-title">Portfolio</div>
   <div class="portfolio-container">
-    <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+    <div class="users-show-image-container">
+      <div class="users-show-image"><%= gravatar_for @user, size: 100 %></div>
+    </div>
     <div class="users-show-info-container">
       <div class="users-show-name"><%=@user.name%></div>
-      <div>about me</div>
-      <div>profession</div>
-      <div>skills</div>
+      <div><%=@user.about_me%></div>
+      <div><%=@user.profession%></div>
+      <div><%=@user.skills%></div>
     </div>
   </div>
   <div class="toggle-bar">

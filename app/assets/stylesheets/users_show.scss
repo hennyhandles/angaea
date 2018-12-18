@@ -13,8 +13,16 @@
   display: flex;
   width: 800px;
   justify-content: space-around;
+  margin-top: 50px;
+  border: 1px solid lightgray;
 }
 
+.users-show-image-container {
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
 .users-show-image {
   border-radius: 50%;
 }
@@ -22,6 +30,8 @@
 .users-show-info-container {
   display: flex;
   flex-direction: column;
+  width: 400px;
+  margin: 5px; 
 }
 
 .users-show-name {
@@ -193,5 +203,5 @@
 }
 
 .ratings-comment {
-  margin-left: 5px; 
+  margin-left: 5px;
 }

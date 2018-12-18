@@ -1,18 +1,23 @@
 class ActivitiesController < ApplicationController
 
   def create
-    @activity = current_user.acitivities.build(acitivities_params)
-
+    @activity = Activity.new(activities_params)
+    if @activity.save
     flash[:success] = "Activity created!"
-    redirect_to portfolio_url
-
+  redirect_to user_path(current_user)
+  #@user
   else
-    render 'static_pages/home'
+    redirect_to user_path(current_user)
   end
+end
 
   def new
     @activity = Activity.new
 
+  end
+
+  def clicked
+    
   end
 
   def destroy
@@ -35,10 +40,10 @@ class ActivitiesController < ApplicationController
   end
 
 
-  private:
+  private
 
   def activities_params
-    params.require(:activity).permit(:content, :aditional_info, :user, :cost, :type, :picture,
-                                                :addressLN1, :addressLN2, :city, :state, :zip)
+    params.require(:activity).permit(:activity_name, :content, :aditional_info, :user, :cost, :catagory, :picture,
+                                                                :addressLN1, :addressLN2, :city, :state, :zip)
     end
   end

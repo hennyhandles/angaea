@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
 
 resources :users
-resources :activities,          only: [:new, :create, :destroy]
+resources :categories, only: [:show]
+resources :activities,          only: [:new, :show, :create, :destroy]
 end

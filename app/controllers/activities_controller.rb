@@ -13,7 +13,11 @@ end
 
   def new
     @activity = Activity.new
+  end
 
+  def show
+    @activity = Activity.find(params[:id])
+    @tags = @activity.categories
   end
 
   def clicked

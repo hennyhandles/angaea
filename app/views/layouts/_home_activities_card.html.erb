@@ -1,13 +1,15 @@
 <div class="home-activities-container">
   <%activities.each do |activity|%>
-    <div class="home-activities-card-container">
-      <img class="home-top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
-      <div class="home-bottom-activity-card">
-        <div class="home-activity-card-name"><%=activity.activity_name%></div>
-        <a href="<%user_path(activity.user)%>"><div class="activity-card-user"><%=activity.user.name%></div></a>
-        <div class="home-activity-card-price">$<%=activity.cost%></div>
+    <%= link_to(activity) do %>
+      <div class="home-activities-card-container">
+        <img class="home-top-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+        <div class="home-bottom-activity-card">
+          <div class="home-activity-card-name"><%=activity.activity_name%></div>
+          <div class="activity-card-user"><%=activity.user.name%></div>
+          <div class="home-activity-card-price">$<%=activity.cost%></div>
+        </div>
       </div>
-    </div>
+    <%end%>
   <%end%>
-  <a href="#" class="home-category"><%=category%></a>
+  <a href="<%=category_path(category.id)%>" class="home-category"><%=category.category_name%></a>
 </div>

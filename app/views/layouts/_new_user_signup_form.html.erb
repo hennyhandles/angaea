@@ -1,0 +1,27 @@
+<div class="create-activity-form-container">
+  <h1>Sign Up</h1>
+  <form class="create-activity-form-css" action="<%= users_path %>" method="post">
+    <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
+    <label>
+      Name
+      <input class="" type="text" name="user[name]" value="">
+    </label>
+
+    <label>
+      Email
+      <input class="" type="text" name="user[email]" value="">
+    </label>
+
+    <label>
+      Password
+      <input class="" type="password" name="user[password]" value="">
+    </label>
+
+    <label>
+      Confirm Password
+      <input class="" type="password" name="user[password_confirmation]" value="">
+    </label>
+
+    <input class="btn btn-primary" type="submit" value="Sign Up">
+  </form>
+</div>

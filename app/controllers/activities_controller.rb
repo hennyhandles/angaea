@@ -17,7 +17,7 @@ end
   end
 
   def clicked
-    
+
   end
 
   def destroy

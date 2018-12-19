@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   # resources :activities
-  root 'static_pages#activities'  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/activities', to: 'static_pages#activities' #/activities goes to static_pages controller then actvities funct
+  # root 'static_pages#activities'  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/activities', to: 'static_pages#activities'
+  root 'static_pages#home'
   get '/rentals' , to: 'static_pages#rentals'
   get '/bookings' , to: 'static_pages#bookings'
   get '/dashboard' , to: 'static_pages#dashboard'
@@ -14,11 +15,10 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
-  get '/edit', to: 'users_controller#edit'
 
 
 
 resources :users
 resources :categories, only: [:show]
-resources :activities,          only: [:new, :show, :create, :destroy]
+resources :activities, only: [:new, :show, :edit, :update, :create, :destroy]
 end

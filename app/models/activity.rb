@@ -6,7 +6,7 @@ class Activity < ApplicationRecord
     through: :tags,
     source: :category
   #has many attributes
-  validates :user_id, presence: true
+  validates :user_id, :activity_name, :cost, :city, :addressLN1, :state, :zip, :content, presence: true
   validates :content, presence: true, length: { minimum: 1 }
 
   # mount_uploader :picture, PictureUploader
@@ -14,8 +14,11 @@ class Activity < ApplicationRecord
   # get average rating
   def get_average_rating
     average = 0
-    self.ratings.each {|rating| average += rating.stars}
-    return (average/self.ratings.length).round
+    if self.ratings.any?
+      self.ratings.each {|rating| average += rating.stars}
+      return (average/self.ratings.length).round
+    end
+    return 0 
   end
   # get highest rated comments
   def get_comment

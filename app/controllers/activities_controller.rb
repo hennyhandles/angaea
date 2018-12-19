@@ -30,8 +30,4 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:activity_name, :content, :category, :additional_info, :cost, :start_date, :end_date, :picture, :addressLN1, :addressLN2, :city, :state, :zip)
   end
-
-  # def tag_params
-  #   params.require(:activity).permit(:category)
-  # end
 end

@@ -1,5 +1,5 @@
 <div class="home-container">
-  <%= render 'layouts/home_activities_card', category: "art", activities: @art_activities%>
-  <%= render 'layouts/home_activities_card', category: "music", activities: @music_activities%>
-  <%= render 'layouts/home_activities_card', category: "dance", activities: @dance_activities%>
+  <%= render 'layouts/home_activities_card', category: @art, activities: @art_activities%>
+  <%= render 'layouts/home_activities_card', category: @music, activities: @music_activities%>
+  <%= render 'layouts/home_activities_card', category: @dance, activities: @dance_activities%>
 </div>

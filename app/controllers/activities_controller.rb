@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = current_user.acitivities.build(acitivities_params)
-    
+
     flash[:success] = "Activity created!"
     redirect_to portfolio_url
 
@@ -12,7 +12,11 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+  end
 
+  def show
+    @activity = Activity.find(params[:id])
+    @tags = @activity.categories 
   end
 
   def destroy

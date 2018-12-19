@@ -3,15 +3,19 @@ class CreateActivities < ActiveRecord::Migration[5.2]
     create_table :activities do |t|
       #generate name
 
-      t.text :content
+      t.text :content, null: false
+      t.string :activity_name, null: false
       t.string :additional_info
       t.references :user, foreign_key: true
-      t.float :cost
-      t.string :addressLN1
+      t.string :cost, null: false
+      t.string :addressLN1, null: false
       t.string :addressLN2
-      t.string :city
-      t.string :state
-      t.integer :zip
+      t.string :city, null: false
+      t.string :state, null: false
+      t.string :zip, null: false
+      t.string :picture
+      t.datetime :start_date
+      t.datetime :end_date
 
 
       t.timestamps

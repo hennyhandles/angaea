@@ -1,7 +1,11 @@
 <% provide(:title, 'Dance Activities') %>
 <h1>Dance Activities</h1>
-<div class="users-sctivities-container">
-  <% @activities.where(catagory: 'dance') do |activity| %>
-  #display activity
+<%= will_paginate %>
+
+<ul class="dance">
+  <% @activities.each do |activity| %>
+    <%= render activity %>
   <% end %>
-</div>
+</ul>
+
+<%= will_paginate %>

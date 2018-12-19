@@ -13,8 +13,8 @@ user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password"
 Rental.create(cost: 55, rental_name: "Truck", city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user1.id, description: "Really cool truck")
 
 10.times do |counter|
-  name = Faker::HarryPotter.character
-  User.create!(name: name, skills: Faker::ChuckNorris.fact, profession: Faker::Job.title, email: (name.split(" ")[0]+counter.to_s+"@mail.com"), about_me: Faker::GameOfThrones.quote, password: "password")
+ name = Faker::HarryPotter.character
+ User.create!(name: name, skills: Faker::ChuckNorris.fact, profession: Faker::Job.title, email: (name.split(" ")[0]+counter.to_s+"@mail.com"), about_me: Faker::GameOfThrones.quote, password: "password")
 end
 
 art = Category.create(category_name: "art", user_id: user1.id)
@@ -24,15 +24,15 @@ dance = Category.create(category_name: "dance", user_id: user1.id)
 categories = [art, music, dance]
 
 10.times do
-  content = Faker::Lorem.sentence(5)
-  User.all.each do |user|
-    Activity.create!(contact_email: "Test@mail.com", user_id: user.id, picture: Faker::LoremPixel.image("50x60"), activity_name: Faker::GameOfThrones.quote, content: content, cost: rand(500), city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip)
-    Tag.create(activity_id: user.activities.first.id, category_id: categories[rand(3)].id)
-  end
+ content = Faker::Lorem.sentence(5)
+ User.all.each do |user|
+   Activity.create!(contact_email: "Test@mail.com", user_id: user.id, picture: Faker::LoremPixel.image("50x60"), activity_name: Faker::GameOfThrones.quote, content: content, cost: rand(500), city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip)
+   Tag.create(activity_id: user.activities.first.id, category_id: categories[rand(3)].id)
+ end
 end
 
 User.all.each do |user|
-  user.activities.each do |activity|
-    Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
-  end
+ user.activities.each do |activity|
+   Rating.create(user_id: user.id, activity_id: activity.id, stars: (1+rand(5)), comment: Faker::ChuckNorris.fact)
+ end
 end

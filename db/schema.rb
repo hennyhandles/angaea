@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_220210) do
+ActiveRecord::Schema.define(version: 2018_12_19_205048) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -93,6 +93,9 @@ ActiveRecord::Schema.define(version: 2018_12_18_220210) do
     t.string "password_digest"
     t.string "remember_digest"
     t.text "about_me"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -28,6 +28,7 @@ end
 
 
  def create
+    p "in users controller"
      @user = User.new(user_params)
      if @user.save
         'terms_conditions'

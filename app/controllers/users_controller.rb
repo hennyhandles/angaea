@@ -29,7 +29,7 @@ end
 
  def create
     p "in users controller"
-     @user = User.new(user_params)
+     @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password], password_confirmation: user_params[:password_confirmation])
      if @user.save
         'terms_conditions'
        log_in @user
@@ -48,7 +48,7 @@ end
 
  def update
    @user = User.find(params[:id])
-   if @user.update_attributes(user_params)
+   if @user.update_attributes(name: user_params[:name], email: user_params[:email], profession: user_params[:profession], skills: user_params[:skills]) && @user.authenticate(user_params[:password])
      flash[:success] = "Profile updated"
      redirect_to @user
    else
@@ -70,8 +70,7 @@ end
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :profession, :skills, :email, :password, :password_confirmation)
     end
         # Confirms a logged-in user.
    def logged_in_user

@@ -1,4 +1,4 @@
-<div class="create-activity-form-container">
+<div class="display-it-none create-activity-form-container">
   <h1>Create Your Activity</h1>
   <form class="create-activity-form-css" action="<%= activities_path %>" method="post">
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
@@ -25,7 +25,7 @@
 
     <label>
       Contact Email
-      <input class="" type="text" name="activity[contact_email]" value="">
+      <input class="" type="email" name="activity[contact_email]" value="">
     </label>
 
     <label>

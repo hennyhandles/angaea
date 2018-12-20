@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', () => {
 const showRatings = function() {
   let ratings = document.querySelector(".users-ratings-container")
   let activities = document.querySelector(".users-activities-container")
-  let form = document.querySelector(".create-activity-form")
+  let form = document.querySelector(".display-it-none")
   document.querySelector(".right-toggle").addEventListener("click", (e) => {
     console.log(ratings.style.display);
     ratings.style.display = "flex"
@@ -19,7 +19,7 @@ const showRatings = function() {
 const showActivities = function() {
   let ratings = document.querySelector(".users-ratings-container")
   let activities = document.querySelector(".users-activities-container")
-  let form = document.querySelector(".create-activity-form")
+  let form = document.querySelector(".display-it-none")
   document.querySelector(".left-toggle").addEventListener("click", (e) => {
     activities.style.display = "flex"
     form.style.display = "none"
@@ -30,13 +30,13 @@ const showActivities = function() {
 const showCreateActivityForm = function() {
   let ratings = document.querySelector(".users-ratings-container")
   let activities = document.querySelector(".users-activities-container")
-  let form = document.querySelector(".create-activity-form")
+  let form = document.querySelector(".display-it-none")
   let toggleCreate = document.querySelector(".create-activity-toggle")
   if(toggleCreate) {
     toggleCreate.addEventListener("click", (e) => {
       ratings.style.display = "none"
       activities.style.display = "none"
-      form.style.display = "block"
+      form.style.display = "flex"
     })
   }
 

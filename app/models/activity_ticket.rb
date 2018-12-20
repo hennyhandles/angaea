@@ -1,0 +1,2 @@
+class ActivityTicket < ApplicationRecord
+end

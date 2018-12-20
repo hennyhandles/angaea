@@ -63,6 +63,15 @@
   transition: 0.5s;
 }
 
+.create-rental-toggle {
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.5s;
+}
+
 .left-toggle:hover {
   cursor: pointer;
   background: #A6CDDE;
@@ -79,6 +88,11 @@
 }
 
 .create-activity-toggle:hover {
+  cursor: pointer;
+  background: #A6CDDE;
+}
+
+.create-rental-toggle:hover {
   cursor: pointer;
   background: #A6CDDE;
 }
@@ -198,5 +212,9 @@
 }
 
 .create-activity-form {
+  display: none;
+}
+
+.display-it-none-rental {
   display: none; 
 }

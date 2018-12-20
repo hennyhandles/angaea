@@ -6,6 +6,8 @@ class CreateRentals < ActiveRecord::Migration[5.2]
       t.text :description, null: false
       t.string :category
       t.text :additional_info
+      t.string :contact_number
+      t.string :contact_email, null: false
       t.string :addressLN1, null: false
       t.string :addressLN2
       t.string :state, null: false

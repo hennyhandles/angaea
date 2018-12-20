@@ -11,6 +11,8 @@ class UsersController < ApplicationController
  def show
    @user = User.find(params[:id])
    @activity = Activity.new
+   @rental = Rental.new
+   @rentals = @user.rentals
    @activities = @user.activities #need on bottom of page
  end
 

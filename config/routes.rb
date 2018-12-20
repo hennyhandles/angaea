@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 resources :users
 resources :account_activations, only: [:edit]
 resources :categories, only: [:show]
+resources :rentals, only: [:create, :edit, :update, :destroy, :show]
 resources :activities, only: [:new, :show, :edit, :update, :create, :destroy]
 end

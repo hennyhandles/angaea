@@ -39,7 +39,7 @@ categories = [art, music, dance]
 10.times do
  content = Faker::Lorem.sentence(5)
  User.all.each do |user|
-   Activity.create!(capacity: "100", contact_email: "Test@mail.com", user_id: user.id, picture: Faker::LoremPixel.image("50x60"), activity_name: Faker::GameOfThrones.quote, content: "content", cost: rand(500).to_s, city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip)
+   Activity.create!(start_date: "Thu, 20 Dec 2018 18:00:12 UTC +00:00", end_date: "Thu, 20 Dec 2018 18:00:12 UTC +00:00", capacity: "100", contact_email: "Test@mail.com", user_id: user.id, picture: Faker::LoremPixel.image("50x60"), activity_name: Faker::GameOfThrones.quote, content: "content", cost: rand(500).to_s, city: Faker::Address.city, state: Faker::Address.state, addressLN1: Faker::Address.street_address, zip: Faker::Address.zip)
    Tag.create(activity_id: user.activities.first.id, category_id: categories[rand(3)].id)
  end
 end

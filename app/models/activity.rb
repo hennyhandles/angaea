@@ -2,6 +2,12 @@ class Activity < ApplicationRecord
  belongs_to :user
  has_many :ratings
  has_many :tags
+
+ has_many :activity_tickets
+ has_many :attendees,
+  through: :activity_tickets,
+  source: :user
+
  has_many :categories,
    through: :tags,
    source: :category

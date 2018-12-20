@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_205048) do
+ActiveRecord::Schema.define(version: 2018_12_20_070207) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2018_12_19_205048) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
+  create_table "activity_tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_activity_tickets_on_activity_id"
+    t.index ["user_id"], name: "index_activity_tickets_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.integer "user_id"
@@ -52,6 +61,15 @@ ActiveRecord::Schema.define(version: 2018_12_19_205048) do
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_ratings_on_activity_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "rental_tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "rental_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rental_id"], name: "index_rental_tickets_on_rental_id"
+    t.index ["user_id"], name: "index_rental_tickets_on_user_id"
   end
 
   create_table "rentals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

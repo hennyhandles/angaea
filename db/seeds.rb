@@ -11,6 +11,8 @@ Tag.destroy_all
 Rental.destroy_all
 Activity.destroy_all
 Rating.destroy_all
+ActivityTicket.destroy_all
+RentalTicket.destroy_all
 
 user1 = User.create(name: "Bill", email: "Bill@mail.com", password: "password")
 user2 = User.create(name: "Jill", email: "Jill@mail.com", password: "password")
@@ -18,6 +20,8 @@ user3 = User.create(name: "Joe", email: "Joe@mail.com", password: "password")
 user4 = User.create(name: "Henry", email: "Henry@mail.com", password: "password")
 
 test_rental = Rental.create(contact_email: "test@mail.com", cost: 55, rental_name: "Truck", city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user1.id, description: "Really cool truck")
+test_rental2 = Rental.create(contact_email: "test@mail.com", cost: 55, rental_name: "Truck", city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user1.id, description: "Really cool truck")
+test_rental3 = Rental.create(contact_email: "test@mail.com", cost: 55, rental_name: "Truck", city: "SF", addressLN1: "131 this street", state: "CA", zipcode: "94132", user_id: user1.id, description: "Really cool truck")
 # test_rental.owner = user3
 # test_rental.renter = user2
 

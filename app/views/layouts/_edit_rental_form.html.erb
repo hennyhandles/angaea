@@ -5,12 +5,12 @@
     <input type="hidden" name="_method" value="patch">
 
     <label>
-      Activity Name
+      <div style="display:flex"><div>Activity Name</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[rental_name]" value="<%=rental.rental_name%>">
     </label>
 
     <label>
-      Description
+      <div style="display:flex"><div>Description</div><div style="color:red"> *</div></div>
       <textarea class="" name="rental[description]"><%=rental.description%></textarea>
     </label>
 
@@ -25,17 +25,17 @@
     </label>
 
     <label>
-      Contact Email
+      <div style="display:flex"><div>Contact Email</div><div style="color:red"> *</div></div>
       <input class="" type="email" name="rental[contact_email]" value="<%=rental.contact_email%>">
     </label>
 
     <label>
-      Price
+      <div style="display:flex"><div>Price</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[cost]" value="<%=rental.cost%>">
     </label>
 
     <label>
-      Address 1
+      <div style="display:flex"><div>Address 1</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[addressLN1]" value="<%=rental.addressLN1%>">
     </label>
 
@@ -45,17 +45,17 @@
     </label>
 
     <label>
-      City
+      <div style="display:flex"><div>City</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[city]" value="<%=rental.city%>">
     </label>
 
     <label>
-      State
+      <div style="display:flex"><div>Sstate</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[state]" value="<%=rental.state%>">
     </label>
 
     <label>
-      Zipcode
+      <div style="display:flex"><div>Zipcode</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="rental[zipcode]" value="<%=rental.zipcode%>">
     </label>
 

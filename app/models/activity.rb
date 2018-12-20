@@ -12,7 +12,7 @@ class Activity < ApplicationRecord
    through: :tags,
    source: :category
  #has many attributes
- validates :user_id, :contact_email, :activity_name, :cost, :city, :addressLN1, :state, :zip, :content, presence: true
+ validates :user_id, :contact_email, :activity_name, :cost, :city, :capacity, :addressLN1, :state, :zip, :content, presence: true
  validates :content, presence: true, length: { minimum: 1 }
 
  # mount_uploader :picture, PictureUploader

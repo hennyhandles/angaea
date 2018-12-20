@@ -4,12 +4,12 @@
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch">
     <label>
-      Activity Name
+      <div style="display:flex"><div>Activity Name</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[activity_name]" value="<%=activity.activity_name%>">
     </label>
 
     <label>
-      Description
+      <div style="display:flex"><div>Description</div><div style="color:red"> *</div></div>
       <textarea class="" name="activity[content]"><%=activity.content%></textarea>
     </label>
 
@@ -24,17 +24,22 @@
     </label>
 
     <label>
-      Contact Email
+      <div style="display:flex"><div>Contact Email</div><div style="color:red"> *</div></div>
       <input class="" type="email" name="activity[contact_email]" value="<%=activity.contact_email%>">
     </label>
 
     <label>
-      Price
+      <div style="display:flex"><div>Price</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[cost]" value="<%=activity.cost%>">
     </label>
 
     <label>
-      Address 1
+      <div style="display:flex"><div>Max Number of Attendees</div><div style="color:red"> *</div></div>
+      <input class="" type="text" name="activity[capacity]" value="<%=activity.capacity%>">
+    </label>
+
+    <label>
+      <div style="display:flex"><div>Address 1</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[addressLN1]" value="<%=activity.addressLN1%>">
     </label>
 
@@ -44,17 +49,17 @@
     </label>
 
     <label>
-      City
+      <div style="display:flex"><div>City</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[city]" value="<%=activity.city%>">
     </label>
 
     <label>
-      State
+      <div style="display:flex"><div>State</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[state]" value="<%=activity.state%>">
     </label>
 
     <label>
-      Zipcode
+      <div style="display:flex"><div>Zipcode</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[zip]" value="<%=activity.zip%>">
     </label>
 

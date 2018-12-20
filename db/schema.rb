@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_070207) do
     t.string "state", null: false
     t.string "zip", null: false
     t.string "picture"
+    t.string "capacity", null: false
     t.string "contact_number"
     t.string "contact_email", null: false
     t.datetime "start_date"

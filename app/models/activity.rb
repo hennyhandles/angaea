@@ -79,4 +79,22 @@ class Activity < ApplicationRecord
    end
    return categories_hash
  end
+
+ def format_date
+   self.start_date.strftime("%a, %B %d,%l:%M%p")
+ end
+
+ def format_location
+   address_one = self.addressLN1
+   address_two = self.addressLN2 ? " " + self.addressLN2 + "," : ""
+   city = self.city
+   state = self.state
+   zip = self.zip
+   "#{address_one},#{address_two} #{city}, #{state} #{zip}"
+ end
+
+ def format_activity_name
+   self.activity_name[-1] == "." ? self.activity_name[0...self.activity_name.length-1] : self.activity_name
+ end
+
 end

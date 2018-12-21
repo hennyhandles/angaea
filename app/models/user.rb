@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token
-  before_save :downcase_email
-  before_create :create_activation_digest
+  # before_save :downcase_email
+  # before_create :confirmation_token
   has_many :activities, dependent: :destroy
   has_many :ratings
   has_many :rentals
@@ -38,10 +38,6 @@ def User.digest(string)
    BCrypt::Password.new(remember_digest).is_password?(remember_token)
  end
 
-def forget
-     update_attribute(:remember_digest, nil)
-   end
-
    # Confirms a logged-in user.
     def logged_in_user
       unless logged_in?
@@ -51,12 +47,21 @@ def forget
     end
   end
 
-  private
-  def downcase_email
-    self.email = email.downcase
-  end
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
 
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
+    # def downcase_email
+    #   self.email = email.downcase
+    # end
+
+
+  private
+
+# def confirmation_token
+#   if self.confirm_token.blank?
+#     self.confirm_token.blank = SecureRandom.urlsafe_based64.to_s
+#   end
+# end
+end

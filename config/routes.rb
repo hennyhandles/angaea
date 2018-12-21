@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   get 'sessions/new'
   get 'users/new'
   # resources :activities
@@ -16,9 +19,12 @@ Rails.application.routes.draw do
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
 
-
-
-resources :users
+resources :sessions
+resources :users do
+  member do
+    get :confirm_email
+  end
+end
 resources :account_activations, only: [:edit]
 resources :categories, only: [:show]
 resources :rentals, only: [:create, :edit, :update, :destroy, :show]

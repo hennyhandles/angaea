@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password
       t.string :profession
       t.text :skills
+      t.subscribed :boolean
+      t.stripeID, :string
 
       t.timestamps
     end

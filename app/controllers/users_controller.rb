@@ -23,24 +23,36 @@ class UsersController < ApplicationController
 def destroy
    @user = User.find(params[:id])
    user.destroy()
-
-   #######
-
 end
 
+def confirm_email
+  user = User.find_by_confirm_token(params[:id])
+  if user_params
+    user.email_activated
+    flash[:success] = 'Welcome to Angaea! Your acct is now confirmed'
+    redirect_to root_url
+  else
+    flash[:error] = 'Error: User does not exist.'
+    redirect_to root_url
+end
+end
 
  def create
     p "in users controller"
      @user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password], password_confirmation: user_params[:password_confirmation])
-     if @user.save
-        'terms_conditions'
-       log_in @user
+     if @user.save!
+       UserMailer.registration_confirmation(@user).deliver
+       flash[:success] = "Registration completed! Please confirm your email address."
+     end
+        #'terms_conditions'
+      log_in @user
        flash[:success] = "Welcome to the Sample App!"
        redirect_to @user  #redirect_to user_url(@user)
      else
        render 'new'
      end
    end
+
    #forgot to add log in user before that s why it didnt work
 
   def edit
@@ -88,7 +100,6 @@ end
      @user = User.find(params[:id])
      redirect_to(root_url) unless current_user?(@user)
    end
-end
 
 
 def admin_user

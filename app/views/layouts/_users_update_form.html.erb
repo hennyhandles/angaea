@@ -4,12 +4,12 @@
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
     <input type="hidden" name="_method" value="patch"/>
     <label>
-      Name
+      <div style="display:flex"><div>Name</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="user[name]" value="<%=user.name%>">
     </label>
 
     <label>
-      Email
+      <div style="display:flex"><div>Email</div><div style="color:red"> *</div></div>
       <input class="" type="email" name="user[email]" value="<%=user.email%>">
     </label>
 
@@ -24,12 +24,12 @@
     </label>
 
     <label>
-      Password
+      <div style="display:flex"><div>Password</div><div style="color:red"> *</div></div>
       <input class="" type="password" name="user[password]" value="">
     </label>
 
     <label>
-      Confirm Password
+      <div style="display:flex"><div>Confirm Password</div><div style="color:red"> *</div></div>
       <input class="" type="password" name="user[password_confirmation]" value="">
     </label>
 

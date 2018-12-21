@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
  before_action :logged_in_user, only: [:index, :edit, :update]
  before_action :correct_user, only: [:edit, :update]
- before_action :admin_user,     only: :destroy
+ # before_action :admin_user,     only: :destroy
 
  def index
    @users = User.all
@@ -19,23 +19,6 @@ class UsersController < ApplicationController
  def new
    @user = User.new
  end
-
-def destroy
-   @user = User.find(params[:id])
-   user.destroy()
-end
-
-def confirm_email
-  user = User.find_by_confirm_token(params[:id])
-  if user_params
-    user.email_activated
-    flash[:success] = 'Welcome to Angaea! Your acct is now confirmed'
-    redirect_to root_url
-  else
-    flash[:error] = 'Error: User does not exist.'
-    redirect_to root_url
-end
-end
 
  def create
     p "in users controller"
@@ -70,10 +53,13 @@ end
    end
  end
 
- def Destroy
-   User.find(params[:id]).destroy
+ def destroy
+   p "in the destroy "
+  if current_user.destroy
+    p "user was destroyed"
+  end
   flash[:success] = "User deleted"
-  redirect_to users_url
+  redirect_to root_path
 end
 
    def correct_user
@@ -102,6 +88,6 @@ end
    end
 
 
-def admin_user
-     redirect_to(root_url) unless current_user.admin?
-   end
+# def admin_user
+#      redirect_to(root_url) unless current_user.admin?
+#    end

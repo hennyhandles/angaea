@@ -4,12 +4,12 @@
     <input class="" type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"/>
 
     <label>
-      Activity Name
+      <div style="display:flex"><div>Activity Name</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[activity_name]" value="">
     </label>
 
     <label>
-      Description
+      <div style="display:flex"><div>Description</div><div style="color:red"> *</div></div>
       <textarea class="" name="activity[content]"></textarea>
     </label>
 
@@ -24,12 +24,12 @@
     </label>
 
     <label>
-      Contact Email
+      <div style="display:flex"><div>Contact Email</div><div style="color:red"> *</div></div>
       <input class="" type="email" name="activity[contact_email]" value="">
     </label>
 
     <label>
-      Categories
+      <div style="display:flex"><div>Category</div><div style="color:red"> *</div></div>
       <select name="activity[category]">
         <option value="art">art</option>
         <option value="music">music</option>
@@ -38,12 +38,17 @@
     </label>
 
     <label>
-      Price
+      <div style="display:flex"><div>Price</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[cost]" value="">
     </label>
 
     <label>
-      Address 1
+      <div style="display:flex"><div>Max Number of Attendees</div><div style="color:red"> *</div></div>
+      <input class="" type="text" name="activity[capacity]" value="">
+    </label>
+
+    <label>
+      <div style="display:flex"><div>Address 1</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[addressLN1]" value="">
     </label>
 
@@ -53,17 +58,17 @@
     </label>
 
     <label>
-      City
+      <div style="display:flex"><div>City</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[city]" value="">
     </label>
 
     <label>
-      State
+      <div style="display:flex"><div>State</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[state]" value="">
     </label>
 
     <label>
-      Zipcode
+      <div style="display:flex"><div>Zipcode</div><div style="color:red"> *</div></div>
       <input class="" type="text" name="activity[zip]" value="">
     </label>
 

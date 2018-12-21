@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_20_200620) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_20_070207) do
+>>>>>>> fde3b82caeeee2d01bce8506872f947ca4c625e2
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_200620) do
     t.string "state", null: false
     t.string "zip", null: false
     t.string "picture"
+    t.string "capacity", null: false
     t.string "contact_number"
     t.string "contact_email", null: false
     t.datetime "start_date"

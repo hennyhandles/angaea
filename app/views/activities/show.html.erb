@@ -1,3 +1,36 @@
-<div class="activity-show-container">
-  <img height="500px" width="500px" style="objectFit:cover" src="<%=@activity.picture%>"/>
+<div class="show-activities-outer-container">
+  <div class="show-activities-card-container">
+    <div class="show-top-activity-card">
+      <img class="show-image-activity-card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51NatASNQs7LKejInV8vrYzM1TVZ_4YAtNEIRXrBLaqyg5fQi" />
+      <div class="show-info-activity-card">
+        <div class="show-activity-card-name"><%=@activity.format_activity_name%></div>
+        <div class="show-activity-details-container">
+          <div class="show-top-margin show-activity-card-date"><%=@activity.format_start_date%> - <%=@activity.format_end_date%></div>
+          <div class="show-top-margin show-activity-card-location"><%=@activity.format_location%></div>
+          <div class="show-top-margin activity-card-user">By <%=@activity.user.name%></div>
+          <div class="show-top-margin show-activity-card-price">$<%=@activity.cost%></div>
+          <%if @activity.ratings.any?%>
+            <div class="show-activity-stars-container">
+              <%@activity.get_average_rating.times do |num|%>
+                <div class="show-activity-star"><img width="25px" height="25px" src="https://github.com/hennyhandles/angaea/blob/master/app/assets/images/star.png?raw=true"/></div>
+              <%end%>
+              <div class="show-activity-number-ratings"><a href="#">reviews <%=@activity.ratings.length%></a></div>
+            </div>
+          <%end%>
+        </div>
+        <div class="show-activity-capacity"><%=@activity.capacity%> Tickets Left</div>
+      </div>
+    </div>
+    <div class="show-bottom-activity-card">
+      <div class="show-activity-tags">
+        <div class="show-activity-tag-title">Tags</div>
+        <%@activity.categories.each do |category|%>
+          <div class="show-activity-category"><a href="<%=category_path(category)%>"><%=category.category_name%></a></div>
+        <%end%>
+      </div>
+      <div class="show-activity-right">
+        <div class="activity-ticket"> Purchase Ticket </div>
+      </div>
+    </div>
+  </div>
 </div>

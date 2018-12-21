@@ -2,11 +2,17 @@ class Activity < ApplicationRecord
  belongs_to :user
  has_many :ratings
  has_many :tags
+
+ has_many :activity_tickets
+ has_many :attendees,
+  through: :activity_tickets,
+  source: :user
+
  has_many :categories,
    through: :tags,
    source: :category
  #has many attributes
- validates :user_id, :contact_email, :activity_name, :cost, :city, :addressLN1, :state, :zip, :content, presence: true
+ validates :user_id, :contact_email, :activity_name, :cost, :city, :capacity, :addressLN1, :state, :zip, :content, presence: true
  validates :content, presence: true, length: { minimum: 1 }
 
  # mount_uploader :picture, PictureUploader
@@ -73,4 +79,26 @@ class Activity < ApplicationRecord
    end
    return categories_hash
  end
+
+ def format_start_date
+   self.start_date.strftime("%a, %B %d,%l:%M%p")
+ end
+
+ def format_end_date
+   self.end_date.strftime("%a, %B %d,%l:%M%p")
+ end
+
+ def format_location
+   address_one = self.addressLN1
+   address_two = self.addressLN2 ? " " + self.addressLN2 + "," : ""
+   city = self.city
+   state = self.state
+   zip = self.zip
+   "#{address_one},#{address_two} #{city}, #{state} #{zip}"
+ end
+
+ def format_activity_name
+   self.activity_name[-1] == "." ? self.activity_name[0...self.activity_name.length-1] : self.activity_name
+ end
+
 end

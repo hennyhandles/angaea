@@ -4,6 +4,19 @@ class User < ApplicationRecord
   # before_save :downcase_email
   # before_create :confirmation_token
   has_many :activities, dependent: :destroy
+
+  has_many :rental_tickets
+  has_many :rented_items,
+    through: :rental_tickets,
+    source: :rental
+
+  has_many :activity_tickets
+  has_many :events,
+    through: :activity_tickets,
+    source: :activity
+
+
+
   has_many :ratings
   has_many :rentals
   before_save { email.downcase! }

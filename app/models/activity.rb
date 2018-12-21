@@ -80,8 +80,12 @@ class Activity < ApplicationRecord
    return categories_hash
  end
 
- def format_date
+ def format_start_date
    self.start_date.strftime("%a, %B %d,%l:%M%p")
+ end
+
+ def format_end_date
+   self.end_date.strftime("%a, %B %d,%l:%M%p")
  end
 
  def format_location

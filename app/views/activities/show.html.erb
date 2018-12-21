@@ -5,7 +5,7 @@
       <div class="show-info-activity-card">
         <div class="show-activity-card-name"><%=@activity.format_activity_name%></div>
         <div class="show-activity-details-container">
-          <div class="show-top-margin show-activity-card-date"><%=@activity.format_date%></div>
+          <div class="show-top-margin show-activity-card-date"><%=@activity.format_start_date%> - <%=@activity.format_end_date%></div>
           <div class="show-top-margin show-activity-card-location"><%=@activity.format_location%></div>
           <div class="show-top-margin activity-card-user">By <%=@activity.user.name%></div>
           <div class="show-top-margin show-activity-card-price">$<%=@activity.cost%></div>
